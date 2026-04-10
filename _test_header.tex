@@ -1,0 +1,28 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage[left=1.5cm, right=1.5cm, top=1.4cm, bottom=1.4cm]{geometry}
+\usepackage{xcolor}
+\definecolor{NavyBlue}{RGB}{18, 52, 100}
+\definecolor{HeaderBg}{RGB}{236, 243, 250}
+\usepackage[skins]{tcolorbox}
+
+\begin{document}
+\begin{tcolorbox}[
+  enhanced,
+  boxrule=0pt,
+  frame hidden,
+  colback=HeaderBg,
+  sharp corners,
+  width=\paperwidth,
+  enlarge left by=-1.5cm,
+  enlarge right by=-1.5cm,
+  enlarge top by=-1.4cm,
+  top=1.4cm,
+  bottom=10pt,
+  left=1.5cm,
+  right=1.5cm,
+  borderline south={1pt}{0pt}{NavyBlue}
+]
+Hello World
+\end{tcolorbox}
+Some text below.
+\end{document}
