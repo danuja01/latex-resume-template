@@ -1,0 +1,47 @@
+% ── HEADER ──────────────────────────────────────────────────
+\begin{tcolorbox}[
+  enhanced,
+  boxrule=0pt,
+  frame hidden,
+  colback=HeaderBg,
+  sharp corners,
+  width=\paperwidth,
+  enlarge left by=-1.5cm,
+  enlarge right by=-1.5cm,
+  enlarge top by=-1.4cm,
+  top=1.4cm,
+  bottom=6pt,
+  left=1.5cm,
+  right=1.5cm,
+  borderline south={1pt}{0pt}{NavyBlue}
+]
+\begin{minipage}[t]{0.69\textwidth}
+\vspace{0pt}
+{\fontsize{20}{24}\selectfont\bfseries\color{NavyBlue} John Doe}\\[2pt]
+{\color{MidGray}\large Software Engineer}\\[6pt]
+\begin{tabular}{@{} c l @{}}
+  \faIcon{map-marker-alt} &
+    123 Main Street, Tech City, 10000, Country\\[3pt]
+  \faIcon{phone-alt} &
+    (+1)\,234\,567\,8900 \quad \faIcon{envelope}\ {\small\href{mailto:john.doe@example.com}{john.doe@example.com}} \\[3pt]
+  \faIcon{github} &
+    {\small\href{https://github.com/johndoe}{github.com/johndoe}} \quad \faIcon{linkedin}\ {\small\href{https://www.linkedin.com/in/johndoe}{linkedin.com/in/johndoe}}
+\end{tabular}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.27\textwidth}
+\vspace{0pt}
+\raggedleft
+\setlength{\fboxsep}{0pt}%
+\setlength{\fboxrule}{1pt}%
+% Placeholder for photo
+\fcolorbox{NavyBlue}{HeaderBg}{\parbox[b][3.3cm][c]{2.7cm}{%
+  \centering\normalsize\color{MidGray}Photo\\[2pt](2.6\,$\times$\,3.3\,cm)}}
+\end{minipage}
+
+\vspace{6pt}
+
+% Personal details
+\noindent
+{\footnotesize \textbf{Birth:} 01/01/2000 \ \textbar\ \textbf{Place:} Tech City, Country \ \textbar\ \textbf{Nationality:} Country \ \textbar\ \textbf{Gender:} Male \ \textbar\ \textbf{Passport:} A1234567}
+\end{tcolorbox}
