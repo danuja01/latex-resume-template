@@ -1,0 +1,294 @@
+% ============================================================
+%  Danuja Hemal Jayasuriya — Akademischer Lebenslauf
+%  German-Style Academic CV for Master's Application
+%  Compile: xelatex main.tex  (or lualatex main.tex)
+%  Calibri: install with Microsoft Office / copy Calibri .ttf into system fonts.
+%  If Calibri is missing, TeX falls back to TeX Gyre Heros (bundled with TeX Live).
+% ============================================================
+\documentclass[a4paper, 10pt]{article}
+
+\usepackage{fontspec}
+\defaultfontfeatures{Ligatures=TeX}
+\IfFontExistsTF{Calibri}{%
+  \setmainfont{Calibri}%
+}{%
+  \PackageWarning{cv-main}{Calibri not found; using TeX Gyre Heros (TeX Live OTF) as fallback. Install Calibri (e.g.\ Microsoft Office) for an exact match.}%
+  \setmainfont{texgyreheros-regular.otf}[
+    BoldFont       = texgyreheros-bold.otf,
+    ItalicFont     = texgyreheros-italic.otf,
+    BoldItalicFont = texgyreheros-bolditalic.otf,
+  ]%
+}
+
+\usepackage{microtype}
+
+\usepackage[left=1.5cm, right=1.5cm, top=1.4cm, bottom=1.4cm]{geometry}
+
+\usepackage{xcolor}
+\definecolor{NavyBlue}{RGB}{18, 52, 100}
+\definecolor{MidGray}{RGB}{105, 105, 105}
+
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+  pdfauthor = {Danuja Hemal Jayasuriya},
+  pdftitle  = {Lebenslauf -- Danuja Hemal Jayasuriya}
+}
+\usepackage{graphicx}
+\usepackage{calc}
+
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+% ── Section heading ─────────────────────────────────────────
+\newcommand{\cvsection}[1]{%
+  \vspace{7pt}%
+  {\color{NavyBlue}\rule{\linewidth}{1.8pt}}\\[7pt]%
+  {\normalsize\bfseries\color{NavyBlue} #1}%
+  \par\vspace{1pt}{\color{NavyBlue}\rule{\linewidth}{0.3pt}}%
+  \vspace{4pt}%
+}
+
+% Date column width
+\newlength{\datecolw}
+\setlength{\datecolw}{3.1cm}
+
+% ── CV row: minipage pair with perfect baseline alignment ────
+\newcommand{\cvrow}[2]{%
+  \par\vspace{5pt}%
+  \noindent
+  \begin{minipage}[t]{\datecolw}
+    \normalsize\strut\footnotesize\color{MidGray}\raggedright #1
+  \end{minipage}%
+  \hspace{4pt}%
+  \begin{minipage}[t]{\dimexpr\linewidth-\datecolw-4pt}
+    \setlength{\parskip}{0pt}%
+    \setlength{\parindent}{0pt}%
+    \normalsize\strut #2
+  \end{minipage}%
+  \par\vspace{2pt}%
+}
+
+% ── Compact bullet list ──────────────────────────────────────
+\newcommand{\cvlist}[1]{%
+  \begin{itemize}[
+    leftmargin = 11pt,
+    topsep     = 1pt,
+    itemsep    = 0.5pt,
+    parsep     = 0pt,
+    partopsep  = 0pt,
+    label      = {\footnotesize$\bullet$}
+  ]
+    #1
+  \end{itemize}%
+}
+
+% ── Small stack row (for stack line) ────────────────────────
+\newcommand{\stack}[1]{{\footnotesize\textit{Stack:\;#1}}}
+
+% ============================================================
+\begin{document}
+% ============================================================
+
+% ── HEADER ──────────────────────────────────────────────────
+\noindent
+\begin{minipage}[t]{0.69\textwidth}
+\vspace{0pt}
+{\fontsize{20}{24}\selectfont\bfseries\color{NavyBlue} Danuja Hemal Jayasuriya}\\[2pt]
+{\color{MidGray}\large Software Engineer}\\[6pt]
+\begin{tabular}{@{} c l @{}}
+  \faIcon{map-marker-alt} &
+    No.\,342, Daulagala Road, Angunawala, Peradeniya, 20400, Sri Lanka\\[2pt]
+  \faIcon{phone-alt}  & (+94)\,76\,4510\,860 \\[2pt]
+  \faIcon{envelope}   & \href{mailto:todanuja01@gmail.com}{todanuja01@gmail.com} \\[2pt]
+  \faIcon{github}     & \href{https://github.com/danuja01}{github.com/danuja01} \\[2pt]
+  \faIcon{linkedin}   & \href{https://www.linkedin.com/in/danuja-jayasuriya}{linkedin.com/in/danuja-jayasuriya}
+\end{tabular}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.27\textwidth}
+\vspace{0pt}
+\raggedleft
+% Replace the box below with your photo:
+% \includegraphics[width=2.7cm,height=3.3cm,keepaspectratio]{photo.jpg}
+\setlength{\fboxsep}{0pt}%
+\fbox{\parbox[b][3.3cm][c]{2.7cm}{%
+  \centering\footnotesize\color{MidGray}Photo\\[2pt](2.6\,$\times$\,3.3\,cm)}}
+\end{minipage}
+
+\vspace{5pt}{\color{NavyBlue}\rule{\linewidth}{2pt}}\vspace{4pt}
+
+% Personal details (no section heading — standard on many CVs)
+\noindent
+\begin{tabularx}{\linewidth}{@{} X X X @{}}
+  \textbf{Date of Birth:}\ \ 11.10.2001 &
+  \textbf{Place of Birth:}\ \ Kandy, Sri Lanka &
+  \textbf{Nationality:}\ \ Sri Lankan \\[2pt]
+  \textbf{Gender:}\ \ Male &
+  \textbf{Passport No:}\ \ N6964000 &
+\end{tabularx}
+
+% ── EDUCATION ───────────────────────────────────────────────
+\cvsection{Bildungsweg / Education}
+
+\cvrow{08/2021\,--\,06/2025}{%
+  \textbf{BSc (Hons) Information Technology} -- Spec.\ Software Engineering
+  \hfill{\small\textit{GPA: 3.47\,/\,4.0 $\mid$ EQF Level\,6}}\\[1pt]
+  {\small Sri Lanka Institute of Information Technology (SLIIT), Colombo}\\[1pt]
+  {\footnotesize Modules: Software Architecture, Machine Learning, Cloud Computing,
+  Distributed Systems, Mobile Development, Database Design\\
+  Final-Year Research published at \textbf{ICAC\,2024}}}
+
+\cvrow{01/2021\,--\,07/2021}{%
+  \textbf{Exam Preparation \& University Application Phase}\\
+  {\footnotesize Post-A/L study period; preparation for undergraduate enrolment
+  (COVID-19 academic transition gap)}}
+
+\cvrow{2018\,--\,2020}{%
+  \textbf{G.C.E. Advanced Level (A/L)} -- Mathematics Stream
+  \quad{\small Kingswood College, Kandy}}
+
+\cvrow{2007\,--\,2018}{%
+  \textbf{G.C.E. Ordinary Level (O/L)}
+  \quad{\small Kingswood College, Kandy}}
+
+% ── RESEARCH & ACADEMIC PROJECTS ────────────────────────────
+\cvsection{Forschung \& Akademische Projekte / Research \& Academic Projects}
+
+\cvrow{2024}{%
+  \textbf{ICAC\,2024 -- Conference Research Paper}\\
+  {\footnotesize Published research on AI-assisted adaptive learning and LLM-based
+  educational tools; presented at the International Conference on Artificial
+  Intelligence in Computing.}}
+
+\cvrow{2023\,--\,2024}{%
+  \textbf{ShelfPOS -- Retail Point-of-Sale System}\\
+  {\footnotesize Full-stack POS with inventory tracking, real-time stock updates, and
+  sales analytics.\quad
+  \stack{React \textperiodcentered\ Node.js \textperiodcentered\ Express.js
+         \textperiodcentered\ MongoDB}}}
+
+\cvrow{2023}{%
+  \textbf{BrainStation -- Adaptive Quizzing Tool (ADHD Focus)}\\
+  {\footnotesize NLP-driven quiz generation (T5 model) with modified spaced-repetition
+  algorithm; full frontend \& backend.\quad
+  \stack{Node.js \textperiodcentered\ React.js \textperiodcentered\ OpenAI API
+         \textperiodcentered\ NLP/T5 \textperiodcentered\ MongoDB \textperiodcentered\ Firebase}}}
+
+\cvrow{2022}{%
+  \textbf{Vintage Hardware Restoration Projects (Personal Initiative)}\\
+  {\footnotesize Restored and refurbished vintage computing hardware; applied low-level
+  diagnostics and electronics repair techniques.}}
+
+% ── PROFESSIONAL EXPERIENCE ─────────────────────────────────
+\cvsection{Berufserfahrung / Professional Experience}
+
+\cvrow{05/2025\,--\,Present}{%
+  \textbf{Software Engineer} \textbar\ Pearson Lanka (Pvt) Ltd, Colombo\\[1pt]
+  \cvlist{
+    \item Developed scalable React/TypeScript frontend systems for the Pearson+ eText
+          production platform
+    \item Built Shadow DOM-encapsulated components for cross-platform mobile WebView rendering
+    \item Engineered extensible widget system for study tools; applied XSS mitigations and
+          security hardening
+  }
+  \stack{React \textperiodcentered\ TypeScript \textperiodcentered\ Vite
+         \textperiodcentered\ Shadow DOM \textperiodcentered\ Redux
+         \textperiodcentered\ Material-UI}}
+
+\cvrow{12/2024\,--\,05/2025}{%
+  \textbf{Software Engineer} \textbar\ CodeGen International (Pvt) Ltd, Colombo\\[1pt]
+  \cvlist{
+    \item Developed Java microservices and integrated enterprise systems via SOAP APIs
+    \item Engineered RAG-based workflow automation (LangChain + LangGraph): document
+          processing, vector embeddings, context-aware query handling
+    \item Built internal CI/CD automation platform; automated artifact management and
+          release-note generation
+  }
+  \stack{Java \textperiodcentered\ LangChain \textperiodcentered\ LangGraph
+         \textperiodcentered\ Python \textperiodcentered\ SOAP \textperiodcentered\ CI/CD}}
+
+\cvrow{04/2023\,--\,04/2024}{%
+  \textbf{Software Engineer Intern} \textbar\ Pearson Lanka (Pvt) Ltd, Colombo\\[1pt]
+  \cvlist{
+    \item Developed React UI features; led migration to React\,17 functional components
+          and hooks
+    \item Contributed to microfrontend architecture; improved state management with
+          Redux Toolkit
+  }
+  \stack{React.js \textperiodcentered\ Redux Toolkit \textperiodcentered\ SCSS
+         \textperiodcentered\ Material-UI}}
+
+\cvrow{09/2022\,--\,11/2022}{%
+  \textbf{Full-Stack Developer (Part-time)} \textbar\ Kongcepts, Kandy\\
+  {\footnotesize Built React, Angular \& Node.js web applications; enhanced web
+  accessibility standards across client products.
+  \quad\stack{React \textperiodcentered\ Angular \textperiodcentered\ Node.js}}}
+
+% ── COMMUNITY & VOLUNTEERING ────────────────────────────────
+\cvsection{Ehrenamtliche T\"atigkeit / Community \& Volunteering}
+
+\cvrow{2023\,--\,2024}{%
+  \textbf{Director of Developer Relations} \textbar\ SLIIT Mozilla Club\\
+  {\footnotesize Led community engagement; developed the club's official website;
+  organised and delivered technical talks and knowledge-sharing events.}}
+
+\cvrow{2022\,--\,2023}{%
+  \textbf{Project Coordinator (Head Board)} \textbar\ SLIIT FOSS Community\\
+  {\footnotesize Coordinated open-source development projects across a multi-team
+  developer community; mentored junior contributors.}}
+
+% ── LANGUAGE SKILLS ─────────────────────────────────────────
+\cvsection{Sprachkenntnisse / Language Skills}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{} p{2.5cm} X @{}}
+  \quad Sinhala   & Native (Muttersprache)\\[1pt]
+  \quad English   & C1 -- Professional Working Proficiency\\[1pt]
+  \quad German    & A1 -- Beginner (currently learning)\\
+\end{tabularx}
+
+% ── SKILLS ──────────────────────────────────────────────────
+\cvsection{F\"ahigkeiten \& Kenntnisse / Skills \& Competencies}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{} p{2.5cm} X @{}}
+  \textbf{Backend}   & Java, Node.js, Express.js, Python, REST APIs, SOAP, Microservices\\[2pt]
+  \textbf{Frontend}  & React.js, TypeScript, JavaScript, React Native, Redux,
+                       Material-UI, TailwindCSS, SCSS\\[2pt]
+  \textbf{AI\,/\,ML} & LangChain, LangGraph, RAG Pipelines, OpenAI API,
+                       NLP (T5), Vector Embeddings\\[2pt]
+  \textbf{DevOps}    & Docker, Git, CI/CD (GitHub Actions), Firebase, MongoDB, SQL\\[2pt]
+  \textbf{Other}     & Swift, SwiftUI, Rive, Figma, Agile/Scrum\\
+\end{tabularx}
+
+% ── NON-RELATIVE REFEREES ───────────────────────────────────
+\cvsection{Nicht-Verwandte Referenzen / Non-Relative Referees}
+
+\noindent
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+  \textbf{Mr. Amila Senarathne} &
+  \textbf{Mrs. Rajitha Vajiramali} \\
+  Head -- Industry Engagement Unit &
+  Senior Manager -- PearsonPrep \\
+  SLIIT, Malabe Campus &
+  Pearson Lanka (Private) Limited \\
+  \href{mailto:amila.n@sliit.lk}{amila.n@sliit.lk} &
+  \href{mailto:rajitha.vajiramali@pearson.com}{rajitha.vajiramali@pearson.com} \\
+  +94 71 813 0732 &
+  +94 77 342 9411 \\
+\end{tabularx}
+
+% ── SIGNATURE BLOCK ─────────────────────────────────────────
+\vspace{12pt}
+\noindent Colombo, 10.04.2026
+
+\vspace{12pt}
+% Add scanned signature: \includegraphics[height=1.3cm]{signature.png}\\[-4pt]
+\noindent\rule{5.0cm}{0.4pt}\\[2pt]
+{\small Danuja Hemal Jayasuriya}
+
+\end{document}
