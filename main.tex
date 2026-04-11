@@ -2,17 +2,17 @@
 %  John Doe — Resume
 %  German-Style Academic CV for Master's Application
 %  Compile: xelatex main.tex  (or lualatex main.tex)
-%  Calibri: install with Microsoft Office / copy Calibri .ttf into system fonts.
-%  If Calibri is missing, TeX falls back to TeX Gyre Heros (bundled with TeX Live).
+%  Main font: Arial (system font). If Arial is missing, TeX Gyre Heros is used (TeX Live).
+%  On Overleaf without Arial: add arial.ttf (and Arial Bold/Italic) to the project and use Path=./
 % ============================================================
 \documentclass[a4paper, 11pt]{article}
 
 \usepackage{fontspec}
 \defaultfontfeatures{Ligatures=TeX}
-\IfFontExistsTF{Calibri}{%
-  \setmainfont{Calibri}%
+\IfFontExistsTF{Arial}{%
+  \setmainfont{Arial}%
 }{%
-  \PackageWarning{cv-main}{Calibri not found; using TeX Gyre Heros (TeX Live OTF) as fallback. Install Calibri (e.g.\ Microsoft Office) for an exact match.}%
+  \PackageWarning{cv-main}{Arial not found; using TeX Gyre Heros (TeX Live OTF) as fallback. Install Arial or upload .ttf files to the project.}%
   \setmainfont{texgyreheros-regular.otf}[
     BoldFont       = texgyreheros-bold.otf,
     ItalicFont     = texgyreheros-italic.otf,

@@ -1,84 +1,97 @@
-# Academic CV / Resume (LaTeX)
+<!--
+  Overleaf-style project README
+-->
 
-This folder is a modular LaTeX resume template you can upload to [Overleaf](https://www.overleaf.com/) or compile on your own machine.
+# Academic CV / Resume
+
+Modular **XeLaTeX** CV template: header with photo, profile, education, research, projects, experience, volunteering, languages, skills, and references. This CV is specifically designed in the **tabular Lebenslauf format** to apply for MSc programs in Germany (gap-free, reverse-chronological, and fact-oriented).
+
+Sample content is **placeholder (mock) data**—replace it in `sections/` before use.
+
+**Compiler:** [XeLaTeX](https://www.overleaf.com/learn/how-to/Choosing_a_LaTeX_Compiler) (required for `fontspec`).
+
+---
+
+## Screenshots
+
+| CV — page 1 | CV — page 2 |
+|-------------|-------------|
+| ![First page of the CV PDF](screenshots/cv-page-1.png) | ![Second page of the CV PDF](screenshots/cv-page-2.png) |
+
+| Overleaf: project files | Overleaf: set compiler to XeLaTeX |
+|-------------------------|-------------------------------------|
+| ![Project layout with main.tex and sections folder](screenshots/overleaf-project-files.png) | ![Menu showing XeLaTeX compiler selected](screenshots/overleaf-compiler-xelatex.png) |
+
+> **Screenshots folder:** Place your images in [`screenshots/`](screenshots/) using the names above, or edit this README to point to your filenames (e.g. `screenshots/my-preview.png`).
 
 ---
 
 ## About LaTeX
 
-[LaTeX](https://www.latex-project.org/) is a document preparation system. You write plain text with markup (commands like `\section{}`, `\textbf{}`), and a compiler produces a polished PDF with consistent typography, spacing, and structure. It is widely used for theses, papers, and CVs because layout stays stable when you edit content.
+[LaTeX](https://www.latex-project.org/) is a markup-based typesetting system: you write source (`.tex`) and compile to PDF. It keeps typography and spacing consistent, which is why many people use it for CVs, theses, and journal articles.
 
-This project uses **XeLaTeX** (or LuaLaTeX) so we can load modern fonts with **fontspec** (e.g. Calibri on systems that have it, or TeX Gyre Heros as a fallback).
+This template loads **fontspec** with **Arial** as the main font when the system (or project) provides it; otherwise it falls back to **TeX Gyre Heros** (bundled with TeX Live / Overleaf). To use true Arial on Overleaf, add the Arial `.ttf` files to your project and point `fontspec` at them (see comments in `main.tex`).
 
 ---
 
-## About this resume
+## About this template
 
-- **Purpose:** Academic-style CV suitable for university or job applications (education first, then research, projects, experience, etc.).
-- **Content:** The sample uses **mock data** (placeholder name, employers, schools). Replace text in the `sections/` files with your real information.
-- **Layout:** A4, 11pt, navy accent color, header with contact block and photo, timeline-style `\cvrow` entries, and section rules.
-- **Structure:**
+- **Paper:** A4, 11pt `article`, custom navy styling and section rules.
+- **Macros:** `\cvsection`, `\cvrow` (date column + body), `\cvlist` (compact bullets), `\stack` (tech stack line).
+- **Photo:** `images.jpg` in the project root, included from `sections/header.tex` (change path or filename as needed).
 
-| File | Contents |
-|------|----------|
-| `main.tex` | Preamble, custom commands (`\cvsection`, `\cvrow`, `\cvlist`, `\stack`), document shell |
-| `sections/header.tex` | Name, title, address, phone, email, GitHub, LinkedIn, photo, personal line |
-| `sections/profile.tex` | Short profile paragraph |
-| `sections/education.tex` | Degrees and schooling |
-| `sections/research.tex` | Research and publications |
-| `sections/projects.tex` | Academic / personal projects |
+| Path | Role |
+|------|------|
+| `main.tex` | Preamble, macro definitions, `\input{sections/...}`, signature block |
+| `sections/header.tex` | Name, role, contact, photo, personal line |
+| `sections/profile.tex` | Profile paragraph |
+| `sections/education.tex` | Education |
+| `sections/research.tex` | Research & publications |
+| `sections/projects.tex` | Projects |
 | `sections/experience.tex` | Professional experience |
-| `sections/volunteering.tex` | Community and volunteering |
+| `sections/volunteering.tex` | Community & volunteering |
 | `sections/languages.tex` | Languages |
-| `sections/skills.tex` | Skills matrix |
+| `sections/skills.tex` | Skills & competencies |
 | `sections/references.tex` | References |
-| `images.jpg` | Header photo (replace with your own, same filename or update `header.tex`) |
-
-**Signature:** At the bottom of `main.tex` you can uncomment the line that includes a scanned signature image and add your `signature.png` (or similar).
+| `images.jpg` | Header photo |
 
 ---
 
-## Installation and compilation
+## Open in Overleaf
 
-### Option A — Overleaf (no local install)
+1. Zip this project (**include** `main.tex`, the whole `sections/` folder, `images.jpg`, and optionally `screenshots/`).
+2. In Overleaf: **New Project** → **Upload project**.
+3. Click **Menu** (top left) → **Compiler** → **XeLaTeX**.
+4. **Recompile** to build `main.pdf`.
 
-1. Zip this entire folder (`main.tex`, `sections/`, `images.jpg`, etc.).
-2. In Overleaf: **New Project → Upload Project** and select the zip.
-3. Open **Menu** (top left) → **Compiler** → choose **XeLaTeX**.
-4. Click **Recompile**. The PDF should build; if Calibri is missing on Overleaf, the template falls back to TeX Gyre Heros automatically.
+See also: [Uploading a project](https://www.overleaf.com/learn/how-to/Uploading_a_project) and [Choosing a LaTeX compiler](https://www.overleaf.com/learn/how-to/Choosing_a_LaTeX_Compiler).
 
-Ensure `images.jpg` (or whatever filename you use in `header.tex`) is in the project root.
+---
 
-### Option B — Local TeX distribution
+## Compile locally
 
-Install a full TeX system so `xelatex` and the required packages are available:
-
-| OS | Common install |
-|----|----------------|
-| **Windows** | [MiKTeX](https://miktex.org/) or [TeX Live](https://tug.org/texlive/) |
-| **macOS** | [MacTeX](https://tug.org/mactex/) (or TeX Live) |
-| **Linux** | `sudo apt install texlive-full` (Debian/Ubuntu) or your distro’s TeX Live package |
-
-Then from this directory:
+Install a TeX distribution ([TeX Live](https://tug.org/texlive/), [MacTeX](https://tug.org/mactex/), or [MiKTeX](https://miktex.org/)), then:
 
 ```bash
 cd "Sample Overleaf"
 xelatex main.tex
 ```
 
-Run **twice** if you change cross-references or the table of contents (not heavily used here, but harmless). For a clean build you can delete auxiliary files (`*.aux`, `*.log`, `*.out`) when sharing only sources.
-
-### Optional: Calibri
-
-If **Calibri** is installed (e.g. with Microsoft Office), XeLaTeX will use it. Otherwise the template uses **TeX Gyre Heros** from TeX Live—no extra step required.
+Run twice if you add cross-references that need a second pass.
 
 ---
 
-## Quick customization checklist
+## Customize
 
-- [ ] Replace mock data in each file under `sections/`.
-- [ ] Update `pdfauthor` and `pdftitle` in `main.tex` (`\hypersetup{...}`).
-- [ ] Swap `images.jpg` or change the path in `sections/header.tex`.
-- [ ] Add a real signature image if needed (`main.tex`).
+- [ ] Edit each file under `sections/` with your real details.
+- [ ] Set `pdfauthor` and `pdftitle` in `main.tex` (`\hypersetup`).
+- [ ] Replace `images.jpg` or update `\includegraphics{...}` in `sections/header.tex`.
+- [ ] Optional: uncomment the signature `\includegraphics` in `main.tex` and add your scan.
 
-For questions about LaTeX syntax, see [Overleaf Learn](https://www.overleaf.com/learn) or [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX).
+**Learn LaTeX:** [Overleaf Learn](https://www.overleaf.com/learn) · [LaTeX Wikibook](https://en.wikibooks.org/wiki/LaTeX)
+
+---
+
+## License
+
+Template structure and content placeholders are provided as-is for personal use and adaptation. Replace mock data before publishing or sharing your CV.
