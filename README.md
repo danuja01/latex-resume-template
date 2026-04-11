@@ -14,15 +14,9 @@ Sample content is **placeholder (mock) data**—replace it in `sections/` before
 
 ## Screenshots
 
-| CV — page 1 | CV — page 2 |
-|-------------|-------------|
-| ![First page of the CV PDF](screenshots/cv-page-1.png) | ![Second page of the CV PDF](screenshots/cv-page-2.png) |
-
-| Overleaf: project files | Overleaf: set compiler to XeLaTeX |
-|-------------------------|-------------------------------------|
-| ![Project layout with main.tex and sections folder](screenshots/overleaf-project-files.png) | ![Menu showing XeLaTeX compiler selected](screenshots/overleaf-compiler-xelatex.png) |
-
-> **Screenshots folder:** Place your images in [`screenshots/`](screenshots/) using the names above, or edit this README to point to your filenames (e.g. `screenshots/my-preview.png`).
+| CV — page 1                                      | CV — page 2                                       |
+| ------------------------------------------------ | ------------------------------------------------- |
+| ![First page of the CV PDF](screenshots/ss1.png) | ![Second page of the CV PDF](screenshots/ss2.png) |
 
 ---
 
@@ -40,20 +34,20 @@ This template loads **fontspec** with **Arial** as the main font when the system
 - **Macros:** `\cvsection`, `\cvrow` (date column + body), `\cvlist` (compact bullets), `\stack` (tech stack line).
 - **Photo:** `images.jpg` in the project root, included from `sections/header.tex` (change path or filename as needed).
 
-| Path | Role |
-|------|------|
-| `main.tex` | Preamble, macro definitions, `\input{sections/...}`, signature block |
-| `sections/header.tex` | Name, role, contact, photo, personal line |
-| `sections/profile.tex` | Profile paragraph |
-| `sections/education.tex` | Education |
-| `sections/research.tex` | Research & publications |
-| `sections/projects.tex` | Projects |
-| `sections/experience.tex` | Professional experience |
-| `sections/volunteering.tex` | Community & volunteering |
-| `sections/languages.tex` | Languages |
-| `sections/skills.tex` | Skills & competencies |
-| `sections/references.tex` | References |
-| `images.jpg` | Header photo |
+| Path                        | Role                                                                 |
+| --------------------------- | -------------------------------------------------------------------- |
+| `main.tex`                  | Preamble, macro definitions, `\input{sections/...}`, signature block |
+| `sections/header.tex`       | Name, role, contact, photo, personal line                            |
+| `sections/profile.tex`      | Profile paragraph                                                    |
+| `sections/education.tex`    | Education                                                            |
+| `sections/research.tex`     | Research & publications                                              |
+| `sections/projects.tex`     | Projects                                                             |
+| `sections/experience.tex`   | Professional experience                                              |
+| `sections/volunteering.tex` | Community & volunteering                                             |
+| `sections/languages.tex`    | Languages                                                            |
+| `sections/skills.tex`       | Skills & competencies                                                |
+| `sections/references.tex`   | References                                                           |
+| `images.jpg`                | Header photo                                                         |
 
 ---
 
